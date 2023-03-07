@@ -1,0 +1,513 @@
+---
+title: "Plots_for_project"
+output: html_document
+date: "2023-03-07"
+---
+
+
+```{r install packages, echo=FALSE}
+#install.packages("dplyr")
+#library(dplyr)
+
+#install.packages("ggplot2")
+#library("ggplot2")
+```
+
+```{r input_general_data}
+participant <- c(1,2,3,4,5,6,7,8,9,10)
+
+format1 <- c("static", "paper", "static", "interactive", "interactive", "paper" , "interactive", "interactive", "paper", "static")
+format2 <- c("paper", "static", "interactive", "static", "paper", "interactive", "paper", "static", "interactive", "paper" )
+format3 <- c("interactive", "interactive", "paper", "paper", "static", "static", "static", "paper", "static", "interactive")
+
+```
+
+```{r input_example_types_data}
+
+no_types1 <- c(3,6,3,5,4,6,4,1,6,5)
+no_types2 <- c(5,3,5,4,5,5,5,3,5,5)
+no_types3 <- c(7,6,7,7,2,3,6,0,2,6)
+
+max_1 <- 6
+max_2 <- 5
+max_3 <- 7
+
+ratio1 <- no_types1/max_1
+ratio2 <- no_types2/max_2
+ratio3 <- no_types3/max_3
+
+all_types_all_questions <- data.frame(participant, format1, no_types1, ratio1, format2, no_types2, ratio2, format3, no_types3, ratio3)
+```
+
+```{r example_types_per_participant}
+
+p1formats <- c(format1[1], format2[1], format3[1])
+p1ratios <- c(ratio1[1], ratio2[1], ratio3[1])
+
+p2formats <- c(format1[2], format2[2], format3[2])
+p2ratios <- c(ratio1[2], ratio2[2], ratio3[2])
+
+p3formats <- c(format1[3], format2[3], format3[3])
+p3ratios <- c(ratio1[3], ratio2[3], ratio3[3])
+
+p4formats <- c(format1[4], format2[4], format3[4])
+p4ratios <- c(ratio1[4], ratio2[4], ratio3[4])
+
+p5formats <- c(format1[5], format2[5], format3[5])
+p5ratios <- c(ratio1[5], ratio2[5], ratio3[5])
+
+p6formats <- c(format1[6], format2[6], format3[6])
+p6ratios <- c(ratio1[6], ratio2[6], ratio3[6])
+
+p7formats <- c(format1[7], format2[7], format3[7])
+p7ratios <- c(ratio1[7], ratio2[7], ratio3[7])
+
+p8formats <- c(format1[8], format2[8], format3[8])
+p8ratios <- c(ratio1[8], ratio2[8], ratio3[8])
+
+p9formats <- c(format1[9], format2[9], format3[9])
+p9ratios <- c(ratio1[9], ratio2[9], ratio3[9])
+
+p10formats <- c(format1[10], format2[10], format3[10])
+p10ratios <- c(ratio1[10], ratio2[10], ratio3[10])
+
+questions<- c(1,2,3)
+
+
+p1dat <- data.frame(p1formats, p1ratios, questions)
+p2dat <- data.frame(p2formats, p2ratios, questions)
+p3dat <- data.frame(p3formats, p3ratios, questions)
+p4dat <- data.frame(p4formats, p4ratios, questions)
+p5dat <- data.frame(p5formats, p5ratios, questions)
+p6dat <- data.frame(p6formats, p6ratios, questions)
+p7dat <- data.frame(p7formats, p7ratios, questions)
+p8dat <- data.frame(p8formats, p8ratios, questions)
+p9dat <- data.frame(p9formats, p9ratios, questions)
+p10dat <- data.frame(p10formats, p10ratios, questions)
+```
+
+```{r participant_example_type_plots}
+
+p1<-ggplot(p1dat, aes(y = p1ratios*100, x = questions)) +
+     geom_col(aes(fill = p1formats)) +
+     labs(x="Question number", y= "Percentage of example types given",
+     title = "Percentage of Example Types Given for Each Participant", subtitle="Participant 1", fill= "Format of question")
+
+
+p2<-ggplot(p2dat, aes(y = p2ratios*100, x = questions)) +
+     geom_col(aes(fill = p2formats)) +
+    labs(x="Question number", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Participant", subtitle="Participant 2", fill= "Format of question" )
+
+
+
+p3<-ggplot(p3dat, aes(y = p3ratios*100, x = questions)) +
+     geom_col(aes(fill = p3formats)) +
+  labs(x="Question number", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Participant", subtitle="Participant 3", fill= "Format of question")
+
+
+
+p4<-ggplot(p4dat, aes(y = p4ratios*100, x = questions)) +
+     geom_col(aes(fill = p4formats))+
+  labs(x="Question number", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Participant", subtitle="Participant 4", fill= "Format of question")
+
+
+
+p5<-ggplot(p5dat, aes(y = p5ratios*100, x = questions)) +
+     geom_col(aes(fill = p5formats))+
+  labs(x="Question number", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Participant", subtitle="Participant 5", fill= "Format of question")
+
+
+
+p6<-ggplot(p6dat, aes(y = p6ratios*100, x = questions)) +
+     geom_col(aes(fill = p6formats))+
+  labs(x="Question number", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Participant", subtitle="Participant 6", fill= "Format of question")
+
+
+
+p7<-ggplot(p7dat, aes(y = p7ratios*100, x = questions)) +
+     geom_col(aes(fill = p7formats))+
+  labs(x="Question number", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Participant", subtitle="Participant 7", fill= "Format of question")
+
+
+
+p8<-ggplot(p8dat, aes(y = p8ratios*100, x = questions)) +
+     geom_col(aes(fill = p8formats))+
+  labs(x="Question number", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Participant", subtitle="Participant 8", fill= "Format of question")
+
+
+
+p9<-ggplot(p9dat, aes(y = p9ratios*100, x = questions)) +
+     geom_col(aes(fill = p9formats))+
+  labs(x="Question number", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Participant", subtitle="Participant 9", fill= "Format of question")
+
+
+
+p10<-ggplot(p10dat, aes(y = p10ratios*100, x = questions)) +
+     geom_col(aes(fill = p10formats))+
+  labs(x="Question number", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Participant", subtitle="Participant 10", fill= "Format of question")
+```
+
+
+```{r example_type_by_question_plots}
+q1_et<-ggplot(all_types_all_questions, aes(y=ratio1*100, x=participant))+geom_col(aes(fill=format1))+
+  labs(x="Participant", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Question", subtitle="Question 1", fill= "Format of question")+
+   scale_x_discrete(limits=c("1","2","3", "4","5","6","7","8","9","10"))
+
+
+q2_et<-ggplot(all_types_all_questions, aes(y=ratio2*100, x=participant))+geom_col(aes(fill=format2))+
+  labs(x="Participant", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Question", subtitle="Question 2", fill= "Format of question")+
+   scale_x_discrete(limits=c("1","2","3", "4","5","6","7","8","9","10"))
+
+
+q3_et<-ggplot(all_types_all_questions, aes(y=ratio3*100, x=participant))+geom_col(aes(fill=format3))+
+  labs(x="Participant", y= "Percentage of example types given",  title = "Percentage of Example Types Given for Each Question", subtitle="Question 3", fill= "Format of question")+
+   scale_x_discrete(limits=c("1","2","3", "4","5","6","7","8","9","10"))
+
+```
+
+
+```{r create_format_dataframe}
+
+formats <- append(format1,format2)
+formats <- append(formats, format3)
+formats <- data.frame(formats)
+
+ratios <- append(ratio1, ratio2)
+ratios <- append(ratios, ratio3)
+ratios <- data.frame(ratios)
+
+formats_df <- cbind(formats,ratios)
+```
+
+```{r average_example_type_per_format}
+p <- formats_df[formats_df$formats =='paper',]
+i <- formats_df[formats_df$formats =='interactive',]
+s <- formats_df[formats_df$formats =='static',]
+
+p_sum<- sum(p$ratios)
+i_sum<- sum(i$ratios)
+s_sum<- sum(s$ratios)
+
+p_percent <- p_sum*10
+i_percent <- i_sum*10
+s_percent <- s_sum*10
+
+
+average_examples_format <- data.frame(format=c("paper", "interactive", "static"), percentage=c(p_percent, i_percent, s_percent))
+
+f <-ggplot(average_examples_format, aes(x=factor(format, levels = c("paper", "interactive", "static")), y=percentage, fill=format))+geom_col()+labs(x= "Format", y="Average percentage of example types given", fill="Format", title="Average Percentage of Example Types Given for Each Format")
+```
+
+```{r correctanswers}
+formats <- c('paper', 'static', 'interactive')
+total_or_first <- c('first attempt','first attempt','first attempt','not first attempt', 'not first attempt','not first attempt')
+
+total_correct_ans1 <- c(100, 100, 100)
+correct_ans_firstattempt1 <- c(100, 77.78, 92.86)
+correct_ans_not_firstattempt1 <- c(0, 22.22, 7.14)
+
+first_attempt <- data.frame(correct_ans_firstattempt1, correct_ans_not_firstattempt1)
+
+q1 <- data.frame(formats, total_correct_ans1, first_attempt)
+correctans1 <- c(100,77.78,92.86,0,22.22,7.14)
+formats2 <-c('paper', 'static', 'interactive','paper', 'static', 'interactive') 
+q11<- data.frame(format=formats2,totals=correctans1, Attempt=total_or_first)
+
+ca1<-ggplot(q11, mapping=aes(x=format, y=totals, fill=Attempt))+ geom_col()
+
+total_correct_ans2 <- c(100, 100, 100)
+correct_ans_firstattempt2 <- c(92, 100, 93.33)
+correct_ans_not_firstattempt2 <- c(8, 0, 6.67)
+correctans2<- c(92, 100, 93.33,8, 0, 6.67)
+q22<- data.frame(format=formats2,totals=correctans2, Attempt=total_or_first)
+
+ca2<-ggplot(q22, mapping=aes(x=format, y=totals, fill=Attempt))+ geom_col()
+
+
+
+
+total_correct_ans3 <- c(100, 55.56, 91.67)
+correct_ans_firstattempt3 <- c(100, 58.33, 83.33)
+correct_ans_not_firstattempt3 <- c(0, 41.67, 16.67)
+correctans3<- c(100, 32.40, 76.39,0, 23.15, 15.28)
+q33<- data.frame(format=formats2,totals=correctans3, Attempt=total_or_first)
+
+ca3<-ggplot(q33, mapping=aes(x=format, y=totals, fill=Attempt))+ geom_col()
+```
+
+
+```{r plots_for_correct_answers}
+ca1<- ca1 +labs(title="Percentage of Correct Answers for Each Format for Question 1", x='Format', y="Percentage of Correct Answers", subtitle = "Of the percentage of correct answers, were the answers correct on first attempt?")
+
+
+ca2<- ca2 +labs(title="Percentage of Correct Answers for Each Format for Question 2", x='Format', y="Percentage of Correct Answers", subtitle = "Of the percentage of correct answers, were the answers correct on first attempt?")
+
+ca3<- ca3 +labs(title="Percentage of Correct Answers for Each Format for Question 3", x='Format', y="Percentage of Correct Answers", subtitle = "Of the percentage of correct answers, were the answers correct on first attempt?")
+```
+
+
+
+
+
+
+```{r strategies_q1}
+#library(data.table)
+strats <- c('mem','te','tr','ana')
+
+strat1_1 <- c(0, 1, 1,0)
+strat1_2 <- c(0,1,1,0)
+strat1_3 <- c(0,1,1,0)
+strat1_4 <- c(0,1,0,1)
+strat1_5 <- c(0,1,1,1)
+strat1_6 <- c(0,1,0,1)
+strat1_7 <- c(0,1,1,0)
+strat1_8 <- c(0,1,0,0)
+strat1_9 <- c(0,1,0,1)
+strat1_10 <- c(0,1,1,0)
+
+strat_q1 <- data.frame(strat1_1, strat1_2, strat1_3, strat1_4, strat1_5, strat1_6, strat1_7, strat1_8, strat1_9, strat1_10 )
+
+totals1 <- c(rowSums(strat_q1))
+totals1 <- data.frame(totals1)
+
+
+y1 <- cbind(strat_q1, totals1)
+
+strat1_paper <- data.frame(strat_q1[2], strat_q1[6], strat_q1[9])
+strat1_static <- data.frame(strat_q1[1], strat_q1[3], strat_q1[10])
+strat1_int <- data.frame(strat_q1[4], strat_q1[5], strat_q1[7], strat_q1[8])
+
+totals1_paper <- c(rowSums(strat1_paper))
+totals1_paper <- data.frame(totals1_paper)
+
+y1_paper <- cbind(strat1_paper, totals1_paper)
+
+totals1_static <- c(rowSums(strat1_static))
+totals1_static <- data.frame(totals1_static)
+y1_static <- cbind(strat1_static, totals1_static)
+
+totals1_int <- c(rowSums(strat1_int))
+totals1_int <- data.frame(totals1_int)
+y1_int <- cbind(strat1_int, totals1_int)
+```
+
+```{r plot_strategies_q1}
+
+labels <- c("analysis", "definition", "trial and error", "transformation")
+
+strategies1<-ggplot(y1, mapping=aes(x=strats,y= totals1))+geom_col()+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy", subtitle="Question 1")+ scale_x_discrete(labels= labels)+theme(text=element_text(size=15))
+```
+
+```{r strategies_q2}
+#strats <- c('mem','te','tr','ana')
+strat2_1 <- c(0, 0, 1,1)
+strat2_2 <- c(1,0,0,0)
+strat2_3 <- c(1,0,0,0)
+strat2_4 <- c(0,0,1,1)
+strat2_5 <- c(1,1,0,0)
+strat2_6 <- c(0,1,1,0)
+strat2_7 <- c(1,0,0,0)
+strat2_8 <- c(1,0,0,0)
+strat2_9 <- c(1,1,0,1)
+strat2_10 <- c(1,1,0,0)
+
+
+strat_q2 <- data.frame(strat2_1, strat2_2, strat2_3, strat2_4, strat2_5, strat2_6, strat2_7, strat2_8, strat2_9, strat2_10 )
+
+
+
+totals2 <- c(rowSums(strat_q2))
+totals2 <- data.frame(totals2)
+
+
+y2 <- cbind(strat_q1, totals2)
+
+strat2_paper <- data.frame(strat_q2[1], strat_q2[5], strat_q2[7], strat_q2[10])
+strat2_static <- data.frame(strat_q2[2], strat_q2[4], strat_q2[8])
+strat2_int <- data.frame(strat_q2[3], strat_q2[6], strat_q2[9])
+
+totals2_paper <- c(rowSums(strat2_paper))
+totals2_paper <- data.frame(totals2_paper)
+
+
+y2_paper <- cbind(strat2_paper, totals2_paper)
+
+totals2_static <- c(rowSums(strat2_static))
+totals2_static <- data.frame(totals2_static)
+y2_static <- cbind(strat2_static, totals2_static)
+
+totals2_int <- c(rowSums(strat2_int))
+totals2_int <- data.frame(totals2_int)
+y2_int <- cbind(strat2_int, totals2_int)
+```
+
+```{r plot_strategies_q2}
+
+labels <- c("analysis", "definition", "trial and error", "transformation")
+
+strategies2<-ggplot(y2, mapping=aes(x=strats,y= totals2))+geom_col()+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy", subtitle="Question 2")+ scale_x_discrete(labels= labels)+theme(text=element_text(size=15))
+```
+
+
+```{r strategies_q3}
+#strats <- c('mem','te','tr','ana')
+strat3_1 <- c(0, 1, 1,1)
+strat3_2 <- c(0,0,1,1)
+strat3_3 <- c(0,1,1,1)
+strat3_4 <- c(0,1,1,1)
+strat3_5 <- c(0,0,0,1)
+strat3_6 <- c(0,0,1,1)
+strat3_7 <- c(0,1,0,1)
+strat3_8 <- c(0,0,0,0)
+strat3_9 <- c(0,1,0,0)
+strat3_10 <- c(0,0,1,1)
+
+
+strat_q3 <- data.frame(strat3_1, strat3_2, strat3_3, strat3_4, strat3_5, strat3_6, strat3_7, strat3_8, strat3_9, strat3_10 )
+
+
+
+totals3 <- c(rowSums(strat_q3))
+totals3 <- data.frame(totals3)
+
+
+y3 <- cbind(strat_q3, totals3)
+
+strat3_paper <- data.frame(strat_q3[3], strat_q3[4], strat_q3[8])
+strat3_static <- data.frame(strat_q3[5], strat_q3[6], strat_q3[7], strat_q1[9])
+strat3_int <- data.frame(strat_q3[1], strat_q3[2], strat_q3[10])
+
+totals3_paper <- c(rowSums(strat3_paper))
+totals3_paper <- data.frame(totals3_paper)
+
+
+y3_paper <- cbind(strat3_paper, totals3_paper)
+
+totals3_static <- c(rowSums(strat3_static))
+totals3_static <- data.frame(totals3_static)
+y3_static <- cbind(strat3_static, totals3_static)
+
+totals3_int <- c(rowSums(strat3_int))
+totals3_int <- data.frame(totals3_int)
+y3_int <- cbind(strat3_int, totals3_int)
+```
+
+```{r plot_strategies_q3}
+
+labels <- c("analysis", "definition", "trial and error", "transformation")
+
+strategies3<-ggplot(y3, mapping=aes(x=strats,y= totals3))+geom_col()+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy", subtitle="Question 3")+ scale_x_discrete(labels= labels)+theme(text=element_text(size=15))
+```
+
+```{r plot_strategy_by_format}
+
+int1 <- ggplot(y1_int, mapping=aes(x=strats, y= totals1_int))+geom_col()+ scale_x_discrete(labels= labels)+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy for Question 1", subtitle = "Interactive format")+theme(text=element_text(size=15))
+
+static1<- ggplot(y1_static, mapping=aes(x=strats, y= totals1_static))+geom_col()+ scale_x_discrete(labels= labels)+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy for Question 1", subtitle = "Static format")+theme(text=element_text(size=15))
+
+paper1<- ggplot(y1_paper, mapping=aes(x=strats, y= totals1_paper))+geom_col()+ scale_x_discrete(labels= labels)+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy for Question 1", subtitle = "Paper format")+theme(text=element_text(size=15))
+
+
+int2 <- ggplot(y2_int, mapping=aes(x=strats, y= totals2_int))+geom_col()+ scale_x_discrete(labels= labels)+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy for Question 2", subtitle = "Interactive format")+theme(text=element_text(size=15))
+
+static2<- ggplot(y2_static, mapping=aes(x=strats, y= totals2_static))+geom_col()+ scale_x_discrete(labels= labels)+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy for Question 2", subtitle = "Static format")+theme(text=element_text(size=15))
+
+paper2<- ggplot(y2_paper, mapping=aes(x=strats, y= totals2_paper))+geom_col()+ scale_x_discrete(labels= labels)+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy for Question 2", subtitle = "Paper format")+theme(text=element_text(size=15))
+
+int3 <- ggplot(y3_int, mapping=aes(x=strats, y= totals3_int))+geom_col()+ scale_x_discrete(labels= labels)+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy for Question 3", subtitle = "Interactive format")+theme(text=element_text(size=15))
+
+static3<- ggplot(y3_static, mapping=aes(x=strats, y= totals3_static))+geom_col()+ scale_x_discrete(labels= labels)+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy for Question 3", subtitle = "Static format")+theme(text=element_text(size=15))
+
+paper3<- ggplot(y3_paper, mapping=aes(x=strats, y= totals3_paper))+geom_col()+ scale_x_discrete(labels= labels)+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy for Question 3", subtitle = "Paper format")+theme(text=element_text(size=15))
+```
+
+```{r all plots}
+
+#Number using each strategy, per question
+strategies1
+strategies2
+strategies3
+
+#Number using each strategy, per question, per format
+int1
+static1
+paper1
+
+int2
+static2
+paper2
+
+int3
+static3
+paper3
+
+
+# Example types per participant
+p2
+p3
+p4
+p5
+p6
+p7
+p8
+p9
+p10
+
+# example types per question
+q1_et
+q2_et
+q3_et
+
+# example types per format
+f
+
+# correct ans plots
+ca1
+ca2
+ca3
+```
+
+```{r save_plots}
+ggsave("strategies1.png",strategies1)
+ggsave("strategies2.png",strategies2)
+ggsave("strategies3.png",strategies3)
+
+
+
+ggsave("int1.png", int1)
+ggsave("int2.png", int2)
+ggsave("int3.png", int3)
+
+ggsave("static1.png", static1)
+ggsave("static2.png", static2)
+ggsave("static3.png", static3)
+
+ggsave("paper1.png", paper1)
+ggsave("paper2.png", paper2)
+ggsave("paper3.png", paper3)
+
+
+ggsave("p1.png",p1)
+ggsave("p2.png",p2)
+ggsave("p3.png",p3)
+ggsave("p4.png",p4)
+ggsave("p5.png",p5)
+ggsave("p6.png",p6)
+ggsave("p7.png",p7)
+ggsave("p8.png",p8)
+ggsave("p9.png",p9)
+ggsave("p10.png",p10)
+
+
+ggsave("q1.png",q1_et)
+ggsave("q2.png",q2_et)
+ggsave("q3.png",q3_et)
+
+
+ggsave("f.png",f)
+
+
+ggsave("ca1.png",ca1)
+ggsave("ca2.png",ca2)
+ggsave("ca3.png",ca3)
+```
