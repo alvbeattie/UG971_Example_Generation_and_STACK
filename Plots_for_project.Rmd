@@ -7,10 +7,10 @@ date: "2023-03-07"
 
 ```{r install packages, echo=FALSE}
 #install.packages("dplyr")
-#library(dplyr)
+library(dplyr)
 
 #install.packages("ggplot2")
-#library("ggplot2")
+library("ggplot2")
 ```
 
 ```{r input_general_data}
@@ -465,49 +465,4 @@ f
 ca1
 ca2
 ca3
-```
-
-```{r save_plots}
-ggsave("strategies1.png",strategies1)
-ggsave("strategies2.png",strategies2)
-ggsave("strategies3.png",strategies3)
-
-
-
-ggsave("int1.png", int1)
-ggsave("int2.png", int2)
-ggsave("int3.png", int3)
-
-ggsave("static1.png", static1)
-ggsave("static2.png", static2)
-ggsave("static3.png", static3)
-
-ggsave("paper1.png", paper1)
-ggsave("paper2.png", paper2)
-ggsave("paper3.png", paper3)
-
-
-ggsave("p1.png",p1)
-ggsave("p2.png",p2)
-ggsave("p3.png",p3)
-ggsave("p4.png",p4)
-ggsave("p5.png",p5)
-ggsave("p6.png",p6)
-ggsave("p7.png",p7)
-ggsave("p8.png",p8)
-ggsave("p9.png",p9)
-ggsave("p10.png",p10)
-
-
-ggsave("q1.png",q1_et)
-ggsave("q2.png",q2_et)
-ggsave("q3.png",q3_et)
-
-
-ggsave("f.png",f)
-
-
-ggsave("ca1.png",ca1)
-ggsave("ca2.png",ca2)
-ggsave("ca3.png",ca3)
 ```
