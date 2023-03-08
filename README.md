@@ -4,4 +4,5 @@ This repository contains supplementary materials for the project UG971 Example g
 Graphs of percentage of total example types each participant gave for each question.
 ---------------------
 
+![p1](Plots/p1.png)
 
