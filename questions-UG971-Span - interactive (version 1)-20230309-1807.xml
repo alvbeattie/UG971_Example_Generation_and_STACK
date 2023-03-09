@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 111829  -->
+  <question type="stack">
+    <name>
+      <text>Span - interactive (version 1)</text>
+    </name>
+    <questiontext format="plain_text">
+      <text><![CDATA[<script>
+hide_all_parts = function(question_name) {
+console.log(question_name);
+    var parts_to_hide = document.querySelectorAll('div[id*="'+question_name+'_part"]');
+    parts_to_hide.forEach((qpart) => {
+      qpart.style.display = "none";
+    });
+}
+show_part = function(part_to_show) {
+  console.log("Show part: "+part_to_show);
+  document.addEventListener("DOMContentLoaded", function(){
+    var node_to_show = document.querySelector('div[id*="'+part_to_show+'"]');
+    node_to_show.style.display = "block";
+    document.querySelector('div[id=span_visible_parts]').appendChild(node_to_show);
+  });
+};
+document.addEventListener("DOMContentLoaded", function(){
+  hide_all_parts("span");
+});
+show_part("span_part1");
+
+</script>
+<div id="span">
+
+<div id="span_visible_parts"></div>
+
+<div id="span_part1">
+<p>Give an example of a set of vectors that span &#8477 <sup> 3 </sup> </p>
+<p>[[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>
+</div>
+
+<div id="span_part2notstandard">
+<p>Give another example of a set of vectors that span &#8477 <sup> 3 </sup>, that does not contain the standard basis vectors. If no such example exists, enter none.</p>
+<p>[[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</p>
+</div>
+
+<div id="span_part3three">
+<p>Give an example of a set of exactly 3 vectors that span &#8477 <sup> 3 </sup>. If no such example exists enter none. </p>
+<p>[[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</p>
+</div>
+
+<div id=span_part4more">
+<p>Give an example of a set of more than 3 vectors that span &#8477 <sup> 3 </sup>. If no such example exists enter none.</p>
+<p>[[input:ans4]] [[validation:ans4]] [[feedback:prt4]]</p>
+</div>
+
+<div id=span_part5less">
+<p>Give an example of a set of less than 3 vectors that span &#8477 <sup> 3 </sup>. If no such example exists enter none.</p>
+<p>[[input:ans5]] [[validation:ans5]] [[feedback:prt5]]</p>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2022082900</text>
+    </stackversion>
+    <questionvariables>
+      <text><![CDATA[not_exactly3(ans):= is(notequal(length(ans), 3));
+not_more_than3(ans):= is(length(ans) <= 3);
+not_less_than3(ans):= is(length(ans) >= 3);]]></text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text></text>
+    </specificfeedback>
+    <questionnote>
+      <text></text>
+    </questionnote>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>[[1, 0, 0], [0, 1, 0], [0, 0, 1]]</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>[[?, ?, ?], [?, ?, ?],... ]</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>[[2, 0, 0], [0, 1, 0], [0, 0, 1]]</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>[[2, 0, 0], [0, 1, 0], [0, 0, 1]]</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans4</name>
+      <type>algebraic</type>
+      <tans>[[2, 0, 0], [0, 1, 0], [0, 0, 1], [1, 0, 0]]</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans5</name>
+      <type>algebraic</type>
+      <tans>none</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text><![CDATA[M1: zeromatrix(length(ans1), length(ans1[1]));
+for i:1 thru length(ans1) do M1: addrow(M1, ans1[i]);
+span1: is(rank(M1) >= 3);
+contains_standard: is(member([0,0,1], ans1) and member([0,1,0], ans1) and member([1,0,0], ans1));
+
+]]></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>span1</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This set spans \( \mathbb{R}^3 \)</p>]]></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This set does not span \( \mathbb{R}^3 \). Try again!</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>contains_standard</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("span_part2notstandard");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>not_exactly3(ans1)</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("span_part3three");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>3</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>not_more_than3(ans1)</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-4-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("span_part4more");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>4</falsenextnode>
+        <falseanswernote>prt1-4-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>4</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>not_less_than3(ans1)</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-5-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("span_part5less");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-5-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt2</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text><![CDATA[M2: zeromatrix(length(ans2), length(ans2[1]));
+for i:1 thru length(ans2) do M2: addrow(M2, ans2[i]);
+span2: is(rank(M2) >= 3);
+contains_standard2: is(member([0,0,1], ans2) and member([0,1,0], ans2) and member([1,0,0], ans2));
+]]></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>span2</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt2-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This set spans \( \mathbb{R}^3 \)</p>]]></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>This set does not span \( \mathbb{R}^3 \). Try again!</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>contains_standard2</sans>
+        <tans>false</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt2-2-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0.5</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>This example still contains the standard basis vectors. Try again!</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>all_listp(not_exactly3, [ans1, ans2])</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-3-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("span_part3three");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>3</falsenextnode>
+        <falseanswernote>prt2-3-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>all_listp(not_more_than3, [ans1,ans2])</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-4-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("span_part4more");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>4</falsenextnode>
+        <falseanswernote>prt2-4-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>4</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>all_listp(not_less_than3, [ans1,ans2])</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-5-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("span_part5less");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-5-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt3</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text><![CDATA[M3: zeromatrix(length(ans3), length(ans3[1]));
+for i:1 thru length(ans3) do M3: addrow(M3, ans3[i]);
+span3: is(rank(M3) >= 3);
+exactly3: is(length(ans3) = 3);]]></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>span3</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt3-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This set spans \( \mathbb{R}^3 \)</p>]]></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>This set does not span \( \mathbb{R}^3 \). Try again!</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>exactly3</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt3-2-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0.5</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>This set does not have exactly 3 vectors. Try again!</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>all_listp(not_more_than3, [ans1,ans3])</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt3-3-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("span_part4more");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>3</falsenextnode>
+        <falseanswernote>prt3-3-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>all_listp(not_less_than3, [ans1, ans3])</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt3-4-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("span_part5less");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-4-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt4</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text><![CDATA[M4: zeromatrix(length(ans4), length(ans4[1]));
+for i:1 thru length(ans4) do M4: addrow(M4, ans4[i]);
+span4: is(rank(M4) >= 3);
+morethan3: is(length(ans4) > 3);]]></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>span4</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt4-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This set spans \( \mathbb{R}^3 \)</p>]]></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt4-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>This set does not span \( \mathbb{R}^3 \). Try again!</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>morethan3</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt4-2-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0.5</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt4-2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>This example does not have more than 3 vectors. Try again!</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>all_listp(not_less_than3, [ans1, ans4])</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt4-3-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("span_part5less");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0.5</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt4-3-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt5</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans5</sans>
+        <tans>none</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt5-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This example does not exist.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt5-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Try again!</p><p dir="ltr" style="text-align: left;"><br></p><p dir="ltr" style="text-align: left;">Hint: How many vectors do you need to span 3 dimensions?</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+</quiz>

@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 111895  -->
+  <question type="stack">
+    <name>
+      <text>Eigenvalues - interactive (version 2)</text>
+    </name>
+    <questiontext format="plain_text">
+      <text><![CDATA[<script>
+hide_all_parts = function(question_name) {
+console.log(question_name);
+    var parts_to_hide = document.querySelectorAll('div[id*="'+question_name+'_part"]');
+    parts_to_hide.forEach((qpart) => {
+      qpart.style.display = "none";
+    });
+}
+show_part = function(part_to_show) {
+  console.log("Show part: "+part_to_show);
+  document.addEventListener("DOMContentLoaded", function(){
+    var node_to_show = document.querySelector('div[id*="'+part_to_show+'"]');
+    node_to_show.style.display = "block";
+    document.querySelector('div[id=eigenvalues_visible_parts]').appendChild(node_to_show);
+  });
+};
+document.addEventListener("DOMContentLoaded", function(){
+  hide_all_parts("eigenvalues");
+});
+show_part("eigenvalues_part1");
+
+</script>
+<div id="eigenvalues">
+
+<div id="eigenvalues_visible_parts"></div>
+
+<div id="eigenvalues_part1">
+<p>Give an example of a matrix with eigenvalues 1 and 5. </p>
+<p>[[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>
+</div>
+
+<div id="eigenvalues_part2">
+<p>Give an example of a matrix with eigenvalues 1 and 5, that is not diagonal.</p>
+<p>[[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</p>
+</div>
+
+<div id="eigenvalues_part3">
+<p>Give an example of a matrix with eigenvalues 1 and 5, that is not upper or lower triangular. </p>
+<p>[[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</p>
+</div>
+
+<div id=eigenvalues_part4">
+<p>Give an example of a 3x3 matrix with eigenvalues 1 and 5. </p>
+<p>[[input:ans4]] [[validation:ans4]] [[feedback:prt4]]</p>
+</div>
+
+<div id=eigenvalues_part5">
+<p>Give an example of a matrix with three distinct eigenvalues, two of which are 1 and 5.  </p>
+<p>[[input:ans5]] [[validation:ans5]] [[feedback:prt5]]</p>
+</div>
+
+<div id=eigenvalues_part6">
+<p>Give an example of a 3x3 matrix with eigenvalues 1 and 5, which has no other eigenvalues. </p>
+<p>[[input:ans6]] [[validation:ans6]] [[feedback:prt6]]</p>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2022082900</text>
+    </stackversion>
+    <questionvariables>
+      <text>dim2(ans):= is(length(ans) = 2)
+other_eigenvalues(ans):= is(notequal(length(eigenvalues(ans)[1]), 2))
+no_other_eigenvalues(ans):= is(length(eigenvalues(ans)[1]) = 2)</text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text></text>
+    </specificfeedback>
+    <questionnote>
+      <text></text>
+    </questionnote>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>varmatrix</type>
+      <tans>matrix([1,0,0],[0,5,0],[0,0,1])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>matrix([?, ?, ...], [?, ?, ...])</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>varmatrix</type>
+      <tans>matrix([1,0,0],[0,5,0],[0,0,1])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>matrix([?, ?, ...], [?, ?, ...])</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>varmatrix</type>
+      <tans>matrix([1,0,0],[0,5,0],[0,0,1])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>matrix([?, ?, ...], [?, ?, ...])</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans4</name>
+      <type>varmatrix</type>
+      <tans>matrix([1,0,0],[0,5,0],[0,0,1])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>matrix([?, ?, ...], [?, ?, ...])</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans5</name>
+      <type>varmatrix</type>
+      <tans>matrix([1,0,0],[0,5,0],[0,0,1])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>matrix([?, ?, ...], [?, ?, ...])</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans6</name>
+      <type>varmatrix</type>
+      <tans>matrix([1,0,0],[0,5,0],[0,0,1])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>matrix([?, ?, ...], [?, ?, ...])</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>square1: is(length(ans1) = length(transpose(ans1)));
+eigenvalues1: is(member(1, eigenvalues(ans1)[1]) and member(5, eigenvalues(ans1)[1]));
+
+n1: length(ans1);
+upper_triangular1: true;
+lower_triangular1: true;
+diagonal1: true;
+
+for i:1 thru n1 do
+    for j:1 thru i-1 do
+        if notequal(ans1[i, j], 0)
+            then upper_triangular1: false;
+for i:1 thru n1 do
+    for j:i+1 thru n1 do
+        if notequal(ans1[i, j], 0)
+            then lower_triangular1: false;
+if (upper_triangular1 = false or lower_triangular1 = false)
+    then diagonal1:false;
+triangular1: is(upper_triangular1 = true or lower_triangular1 = true)
+
+other_eigenvalues1: is(notequal(length(eigenvalues(ans1)[1]), 2))</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>square1</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Please give a square matrix.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>eigenvalues1</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[1 and 5 are eigenvalues<br><script>show_part("span_part2notstandard");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>1</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This matrix does not have eigenvalues 1 and 5. Try again!</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>diagonal1</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part2");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>3</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>triangular1</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-4-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part3");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>4</falsenextnode>
+        <falseanswernote>prt1-4-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>4</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>is(length(ans1) = 2)</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-5-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part4");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>5</falsenextnode>
+        <falseanswernote>prt1-5-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>5</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>other_eigenvalues1</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-6-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part6");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-6-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part5");</script>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt2</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>square2: is(length(ans2) = length(transpose(ans2)));
+eigenvalues2: is(member(1, eigenvalues(ans2)[1]) and member(5, eigenvalues(ans2)[1]));
+
+n2: length(ans2);
+upper_triangular2: true;
+lower_triangular2: true;
+diagonal2: true;
+
+for i:1 thru n2 do
+    for j:1 thru i-1 do
+        if notequal(ans2[i, j], 0)
+            then upper_triangular2: false;
+for i:1 thru n2 do
+    for j:i+1 thru n2 do
+        if notequal(ans2[i, j], 0)
+            then lower_triangular2: false;
+if (upper_triangular2 = false or lower_triangular2 = false)
+    then diagonal2:false;
+triangular2: is(upper_triangular2 = true or lower_triangular2 = true)
+
+other_eigenvalues2: is(notequal(length(eigenvalues(ans2)[1]), 2))</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>square2</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt2-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>Please give a square matrix.</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>eigenvalues2</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt2-2-T</trueanswernote>
+        <truefeedback format="html">
+          <text>1 and 5 are eigenvalues</text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>1</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>This matrix does not have eigenvalues 1 and 5. Try again!</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>diagonal2</sans>
+        <tans>false</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>3</truenextnode>
+        <trueanswernote>prt2-3-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0.5</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-3-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This example is still diagonal. Try again!</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>triangular2</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-4-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part3");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>4</falsenextnode>
+        <falseanswernote>prt2-4-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>4</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>is(length(ans2) = 2)</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-5-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part4");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>5</falsenextnode>
+        <falseanswernote>prt2-5-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>5</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>other_eigenvalues(ans2)</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-6-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part6");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-6-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part5");</script>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt3</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>square3: is(length(ans3) = length(transpose(ans3)));
+eigenvalues3: is(member(1, eigenvalues(ans3)[1]) and member(5, eigenvalues(ans3)[1]));
+
+n3: length(ans3);
+upper_triangular3: true;
+lower_triangular3: true;
+diagonal3: true;
+
+for i:1 thru n3 do
+    for j:1 thru i-1 do
+        if notequal(ans3[i, j], 0)
+            then upper_triangular3: false;
+for i:1 thru n3 do
+    for j:i+1 thru n3 do
+        if notequal(ans3[i, j], 0)
+            then lower_triangular3: false;
+if (upper_triangular3 = false or lower_triangular3 = false)
+    then diagonal3:false;
+triangular3: is(upper_triangular3 = true or lower_triangular3 = true)
+
+other_eigenvalues3: is(notequal(length(eigenvalues(ans3)[1]), 2))</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>square3</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt3-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>Please give a square matrix.</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>eigenvalues3</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt3-2-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">1 and 5 are eigenvalues</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>1</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[This matrix does not have eigenvalues 1 and 5. Try again!<br><br>Hint: Try writing out the characteristic polynomial for a matrix with eigenvalues 1 and 5<br>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>triangular3</sans>
+        <tans>false</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>3</truenextnode>
+        <trueanswernote>prt3-3-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0.5</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-3-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This matrix is still upper or lower triangular. Try again!</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>all_listp(dim2, [ans1, ans3])</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt3-4-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part4");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>4</falsenextnode>
+        <falseanswernote>prt3-4-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>4</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>all_listp(other_eigenvalues, [ans1, ans3])</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt3-5-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part6");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>5</falsenextnode>
+        <falseanswernote>prt3-5-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>5</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>all_listp(no_other_eigenvalues, [ans1, ans3])</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt3-6-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>
+    show_part("eigenvalues_part5");
+</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-6-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt4</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>square4: is(length(ans4) = length(transpose(ans4)));
+eigenvalues4: is(member(1, eigenvalues(ans4)[1]) and member(5, eigenvalues(ans4)[1]));
+
+n4: length(ans4);
+upper_triangular4: true;
+lower_triangular4: true;
+diagonal4: true;
+
+for i:1 thru n4 do
+    for j:1 thru i-1 do
+        if notequal(ans4[i, j], 0)
+            then upper_triangular4: false;
+for i:1 thru n4 do
+    for j:i+1 thru n4 do
+        if notequal(ans4[i, j], 0)
+            then lower_triangular4: false;
+if (upper_triangular4 = false or lower_triangular4 = false)
+    then diagonal4:false;
+triangular4: is(upper_triangular4 = true or lower_triangular4 = true)
+
+other_eigenvalues4: is(notequal(length(eigenvalues(ans4)[1]), 2))</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>square4</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt4-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt4-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>Please give a 3x3 square matrix</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>eigenvalues4</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt4-2-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">1 and 5 are eigenvalues</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>1</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt4-2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>This matrix does not have eigenvalues 1 and 5. Try again!</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>is(length(ans4) = 3)</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>3</truenextnode>
+        <trueanswernote>prt4-3-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0.5</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt4-3-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This is not a 3x3 matrix. Try again!</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>all_listp(other_eigenvalues, [ans1, ans4])</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt4-4-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>show_part("eigenvalues_part6");</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>4</falsenextnode>
+        <falseanswernote>prt4-4-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>4</name>
+        <answertest>AlgEquiv</answertest>
+        <sans><![CDATA[is(length(ans1) > 2)]]></sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>5</truenextnode>
+        <trueanswernote>prt4-5-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>6</falsenextnode>
+        <falseanswernote>prt4-5-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>5</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>all_listp(no_other_eigenvalues, [ans1, ans4])</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt4-6-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>
+    show_part("eigenvalues_part5");
+</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt4-6-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<script>
+    show_part("eigenvalues_part6");
+</script>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>6</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>no_other_eigenvalues(ans4)</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt4-7-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<script>
+    show_part("eigenvalues_part5");
+</script>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt4-7-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<script>
+    show_part("eigenvalues_part6");
+</script>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt5</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text><![CDATA[square5: is(length(ans5) = length(transpose(ans5)));
+eigenvalues5: is(member(1, eigenvalues(ans5)[1]) and member(5, eigenvalues(ans5)[1]));
+
+other_eigenvalues5: is(length(eigenvalues(ans5)[1]) > 2);]]></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>square5</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt5-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt5-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Please give a square matrix</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>eigenvalues5</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt5-2-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">1 and 5 are eigenvalues</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>1</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt5-2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This matrix does not have eigenvalues 1 and 5. Try again!</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>other_eigenvalues5</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt5-3-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0.5</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt5-3-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This matrix does not have any 3 distinct eigenvalues. Try again!</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt6</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>square6: is(length(ans6) = length(transpose(ans6)));
+eigenvalues6: is(member(1, eigenvalues(ans6)[1]) and member(5, eigenvalues(ans6)[1]));
+
+other_eigenvalues6: is(notequal(length(eigenvalues(ans6)[1]), 2))</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>square6</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt6-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt6-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Please give a square matrix.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>eigenvalues6</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt6-2-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">1 and 5 are eigenvalues</p>]]></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt6-2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>This matrix does not have eigenvalues 1 and 5. Try again!</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>other_eigenvalues6</sans>
+        <tans>false</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>3</truenextnode>
+        <trueanswernote>prt6-3-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0.5</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt6-3-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This matrix has eigenvalues other than 1 and 5. Try again!</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>is(length(ans6) = 3)</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt6-4-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt6-4-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This matrix is not 3x3. Try again!</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+</quiz>

@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 111837  -->
+  <question type="stack">
+    <name>
+      <text>Eigenvalues- static</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p></p><p></p><p>Give 3 examples of a matrix with eigenvalues 1 and 5. Try to make each answer as different as you can.</p><p>[[input:ans1]] [[validation:ans1]] [[feedback: prt1]]</p><p>[[input:ans2]] [[validation:ans2]] [[feedback: prt2]]<br></p><p>[[input:ans3]] [[validation:ans3]] [[feedback: prt3]]<br></p><p></p><p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2022082900</text>
+    </stackversion>
+    <questionvariables>
+      <text></text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text><![CDATA[[[feedback:prt1]]<br>[[feedback:prt2]]<br>[[feedback:prt3]]<br>]]></text>
+    </specificfeedback>
+    <questionnote>
+      <text></text>
+    </questionnote>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>varmatrix</type>
+      <tans>matrix([1,0],[0,5])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>matrix([?, ?, ...], [?, ?, ...])</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>varmatrix</type>
+      <tans>matrix([1,0,0],[0,5,0],[0,0,0])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>varmatrix</type>
+      <tans>matrix([1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,5])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>square1: is(length(ans1) = length(transpose(ans1)));
+eigenvalues1: is(member(1, eigenvalues(ans1)[1]) and member(5, eigenvalues(ans1)[1]));</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>square1</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt1-square-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-square-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>Remember the matrix needs to be square</text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>eigenvalues1</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-evalues-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Well done!</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-evalues-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">1 and/or 5 are not eigenvalues of this matrix</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt2</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>square2: is(length(ans2) = length(transpose(ans2)));
+eigenvalues2: is(member(1, eigenvalues(ans2)[1]) and member(5, eigenvalues(ans2)[1]));</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>is(ans1=ans2)</sans>
+        <tans>false</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt2-repeat-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-repeat-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This is the same as your first answer, can you think of a different one?<br></p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>square2</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt2-square-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-square-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Remember the matrix needs to be square</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>eigenvalues2</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-evalues-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Well done!</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-evalues-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">1 and/or 5 are not eigenvalues of this matrix</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt3</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>square3: is(length(ans3) = length(transpose(ans3)));
+eigenvalues3: is(member(1, eigenvalues(ans3)[1]) and member(5, eigenvalues(ans3)[1]));</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>is(ans3=ans1)</sans>
+        <tans>false</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt3-repeat1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-repeat1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This is the same as your first answer, can you think of a different one?<br></p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>is(ans3=ans2)</sans>
+        <tans>false</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt3-repeat2-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-repeat2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This is the same as your second answer, can you think of a different one?<br></p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>square3</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>3</truenextnode>
+        <trueanswernote>prt3-square-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-square-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Remember the matrix needs to be square</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>eigenvalues3</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt3-evalues-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Well done!</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-evalues-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">1 and/or 5 are not eigenvalues of this matrix</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <qtest>
+      <testcase>1</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([1,0], [0,5])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([1,0], [0,5])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([1,0], [0,5])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt1-evalues-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt2-repeat-F</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt3-repeat1-F</expectedanswernote>
+      </expected>
+    </qtest>
+    <qtest>
+      <testcase>2</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([1,0], [0,5])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([1,0,0], [0,5,0],[0,0,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([1,0,0,0], [0,5,0,0],[0,0,0,0],[0,0,0,0])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt1-evalues-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt2-evalues-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt3-evalues-T</expectedanswernote>
+      </expected>
+    </qtest>
+    <qtest>
+      <testcase>3</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([1,0,0], [0,5,0],[0,0,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([1,0],[0,1])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([1,1],[5,5])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt1-evalues-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt2-evalues-F</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt3-evalues-F</expectedanswernote>
+      </expected>
+    </qtest>
+    <qtest>
+      <testcase>4</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([0,1],[5,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([0,5],[25,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([0,5],[25,0])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt1-evalues-F</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt2-evalues-F</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt3-repeat2-F</expectedanswernote>
+      </expected>
+    </qtest>
+    <qtest>
+      <testcase>5</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([1,0],[0,5],[0,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([1,1],[0,5])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([1,0],[1,5])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt1-square-F</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt2-evalues-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt3-evalues-T</expectedanswernote>
+      </expected>
+    </qtest>
+    <qtest>
+      <testcase>6</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([1,1],[2,2],[3,3])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([1,10],[0,5])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([1,10],[0,5],[0,0])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt1-square-F</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt2-evalues-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt3-square-F</expectedanswernote>
+      </expected>
+    </qtest>
+    <qtest>
+      <testcase>7</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([1,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([1,0,0],[0,5,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([1,100],[0,5])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt1-square-F</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt2-square-F</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt3-evalues-T</expectedanswernote>
+      </expected>
+    </qtest>
+  </question>
+
+</quiz>
