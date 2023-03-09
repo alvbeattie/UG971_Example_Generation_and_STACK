@@ -494,5 +494,5 @@ example_types_plot <- ggplot(data=example_types, aes(x=Participant, y= Percentag
   geom_hline(data = data.frame(avg_s,Format='static'), aes(yintercept = avg_s))+
   labs(title="Example Types Given in Each Format, for All Questions",subtitle="With a line of average percentage of example types given for each format ",y= "Percentage of Example Types Given (%)")
 
-example_types_plot
+ggsave("example_types_plot.png", example_types_plot)
 ```
