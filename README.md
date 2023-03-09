@@ -4,5 +4,5 @@
 #### Graphs of percentage of total example types each participant gave for each question.
 
 
-[et](Plots/example_types_plot.png)
+![Example_Types_Plot](Plots/example_types_plot.png)
 
