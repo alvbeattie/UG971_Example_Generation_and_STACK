@@ -1,6 +1,9 @@
-# UG971_Example_Generation_and_STACK
+# UG971 Example Generation and STACK
 
 This repository is the appendix to the project's report. This file contains links to other files in the repository, and figures showing data collected in the study. 
+
+## Interviews
+
 #### Participants
 [Email to ILA Students](https://github.com/eilidhmillin/UG971_Example_Generation_and_STACK/blob/0d9e6ed6f61b2acb774bc38f5852d3394983be53/email_to_students.png)
 
@@ -22,11 +25,13 @@ This repository is the appendix to the project's report. This file contains link
 
 #### Question Tests for Interactive STACK
 
+[Question 1: Span](https://github.com/eilidhmillin/UG971_Example_Generation_and_STACK/blob/8509e6bd1aad43ca6a52676b802f00dc0fd1dcb6/Span_tests.pdf)
 
+[Question 2: RREF]()
 
+[Question 3: Eigenvalues](https://github.com/eilidhmillin/UG971_Example_Generation_and_STACK/blob/8509e6bd1aad43ca6a52676b802f00dc0fd1dcb6/Eigenvalues_tests.pdf)
 
-
-
+## Analysis
 
 #### Example Types
 
