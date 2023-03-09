@@ -492,7 +492,33 @@ example_types_plot <- ggplot(data=example_types, aes(x=Participant, y= Percentag
   geom_hline(data = data.frame(avg_i,Format='interactive'), aes(yintercept = avg_i))+
   geom_hline(data = data.frame(avg_p,Format='paper'), aes(yintercept = avg_p))+
   geom_hline(data = data.frame(avg_s,Format='static'), aes(yintercept = avg_s))+
-  labs(title="Example Types Given in Each Format, for All Questions",subtitle="With a line of average percentage of example types given for each format ",y= "Percentage of Example Types Given (%)")
+  labs(title="Example Types Given in Each Format, for All Questions",subtitle="With a line of average percentage of example types given for each format ",y= "Percentage of Example Types Given (%)")+
+  scale_x_continuous(breaks=c(2,4,6,8,10))
 
-ggsave("Plots/example_types_plot.png", example_types_plot, width = 5, height = 2)
+example_types_plot
+ggsave("Plots/example_types_plot.png", example_types_plot, width = 7, height = 5)
+```
+
+```{r strategies_revisited}
+
+trial_and_error <- c(rep(1,10),rep(0,4),1,1,0,0,1,1,1,0,1,1,0,0,1,0,1,0)
+transformation <- c(1,1,1,0,1,0,1,0,0,1,1,0,0,1,0,1, rep(0,4),rep(1,4), 0,1,0,0,0,1)
+analysis <- c(0,0,0,1,1,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0, rep(1,7), 0,0,1)
+
+strategies <- data.frame("Participant"=participant,"Question"= questions, "Format"=formats, trial_and_error, transformation, analysis)
+
+
+
+
+t_and_e <- strategies[strategies$trial_and_error==1,]
+tr <- t_and_e <- strategies[strategies$transformation==1,]
+ana <- t_and_e <- strategies[strategies$analysis==1,]
+
+
+
+
+
+
+
+
 ```
