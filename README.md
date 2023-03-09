@@ -3,7 +3,7 @@
 ## Chapter 2
 ### Participants
 Email sent out to ILA students.
-
+![Email](email.students.png)
 Consent form each partiticpant filled out.
 
 ### Materials
