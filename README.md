@@ -34,7 +34,7 @@ This repository is the appendix to the project's report. This file contains link
 
 #### Example Types
 
-<img src="https://github.com/eilidhmillin/UG971_Example_Generation_and_STACK/blob/8b8acd6cdcfae0bfd00dc0298c1ef27d28d6691a/Plots/example_types_plot.png" width= 70% height=80%>
+<img src="https://github.com/eilidhmillin/UG971_Example_Generation_and_STACK/blob/212d7be753f824452c0e3f454f81731a01718f45/Plots/example_types_plot.png" width= 70% height=80%>
 
 
 
