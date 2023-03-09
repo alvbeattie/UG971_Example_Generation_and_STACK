@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 111836  -->
+  <question type="stack">
+    <name>
+      <text>RREF- static</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p></p><p></p><p>Give 3 example of matrices in reduced row echelon form (RREF). Try to make each answer as different as you can.</p><p></p><p>[[input:ans1]] [[validation:ans1]] [[feedback: prt1]]</p><p>[[input:ans2]] [[validation:ans2]] [[feedback: prt2]]<br></p><p>[[input:ans3]] [[validation:ans3]] [[feedback: prt3]]</p><br><p></p><p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2023010400</text>
+    </stackversion>
+    <questionvariables>
+      <text></text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text><![CDATA[[[feedback:prt1]]<br>[[feedback:prt2]]<br>[[feedback:prt3]]<br>]]></text>
+    </specificfeedback>
+    <questionnote>
+      <text></text>
+    </questionnote>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>matrix</type>
+      <tans>matrix([1,0,0],[0,1,0],[0,0,1])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>matrix</type>
+      <tans>matrix([1,0,0],[0,1,0],[0,0,0])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>matrix</type>
+      <tans>matrix([1,0,0],[0,0,0],[0,0,0])</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>ans:ans1;
+rref: false;
+if (rank(ans)=3 and ans=matrix([1,0,0],[0,1,0],[0,0,1])) or  
+   (rank(ans)=0 and ans=matrix([0,0,0],[0,0,0],[0,0,0])) or
+   (rank(ans)=1 and ans[2]=[0,0,0] and ans[3]=[0,0,0] and (ans[1,1]=1  or (ans[1,1]=0 and ans[1,2]=1) or (ans[1,1]=0 and ans[1,2]=0 and ans[1,3]=1))) or
+   (rank(ans)=2 and ans[3]=[0,0,0] and ((ans[1,1]=1 and ans[1,2]=0 and ans[2,2]=1 and ans[2,1]=0) or (ans[1]=[0,1,0] and ans[2]=[0,0,1])or (ans[1,1]=1 and ans1[1,3]=0 and ans[2]=[0,0,1])))
+then rref:true;</text>
+      </feedbackvariables>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>rref</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-rref-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Well done!</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-rref-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This matrix is not in RREF</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt2</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>ans:ans2;
+rref: false;
+if (rank(ans)=3 and ans=matrix([1,0,0],[0,1,0],[0,0,1])) or  
+   (rank(ans)=0 and ans=matrix([0,0,0],[0,0,0],[0,0,0])) or
+   (rank(ans)=1 and ans[2]=[0,0,0] and ans[3]=[0,0,0] and (ans[1,1]=1  or (ans[1,1]=0 and ans[1,2]=1) or (ans[1,1]=0 and ans[1,2]=0 and ans[1,3]=1))) or
+   (rank(ans)=2 and ans[3]=[0,0,0] and ((ans[1,1]=1 and ans[1,2]=0 and ans[2,2]=1 and ans[2,1]=0) or (ans[1]=[0,1,0] and ans[2]=[0,0,1])or (ans[1,1]=1 and ans[1,3]=0 and ans[2]=[0,0,1])))
+then rref:true;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>is(ans1=ans2)</sans>
+        <tans>false</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt2-repeat-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-repeat-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This is the same as your first answer. Can you think of another?</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>rref</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-rref-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Well done!</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-rref-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This matrix is not in RREF<br></p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt3</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>ans:ans3;
+rref: false;
+if (rank(ans)=3 and ans=matrix([1,0,0],[0,1,0],[0,0,1])) or  
+   (rank(ans)=0 and ans=matrix([0,0,0],[0,0,0],[0,0,0])) or
+   (rank(ans)=1 and ans[2]=[0,0,0] and ans[3]=[0,0,0] and (ans[1,1]=1  or (ans[1,1]=0 and ans[1,2]=1) or (ans[1,1]=0 and ans[1,2]=0 and ans[1,3]=1))) or
+   (rank(ans)=2 and ans[3]=[0,0,0] and ((ans[1,1]=1 and ans[1,2]=0 and ans[2,2]=1 and ans[2,1]=0) or (ans[1]=[0,1,0] and ans[2]=[0,0,1])or (ans[1,1]=1 and ans1[1,3]=0 and ans[2]=[0,0,1])))
+then rref:true;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>is(ans3=ans1)</sans>
+        <tans>false</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt3-repeat1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-repeat1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This is the same as your first answer. Can you think of another?<br></p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>is(ans3=ans2)</sans>
+        <tans>false</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt3-repeat2-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-repeat2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">This is the same as your second answer. Can you think of another?<br></p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>rref</sans>
+        <tans>true</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt3-rref-T</trueanswernote>
+        <truefeedback format="html">
+          <text><![CDATA[<p dir="ltr" style="text-align: left;">Well done!</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-rref-F</falseanswernote>
+        <falsefeedback format="html">
+          <text>This matrix is not in RREF</text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <qtest>
+      <testcase>1</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([1,0,0],[0,1,0],[0,0,1])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([1,0,0],[0,1,0],[0,0,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([2,0,0],[0,1,0],[0,0,1])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt1-rref-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt2-rref-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt3-rref-F</expectedanswernote>
+      </expected>
+    </qtest>
+    <qtest>
+      <testcase>2</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([1,0,0],[0,1,0],[0,0,1])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([1,0,0],[0,1,0],[0,0,1])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([1,0,0],[0,1,0],[0,0,1])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt1-rref-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt2-repeat-F</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt3-repeat1-F</expectedanswernote>
+      </expected>
+    </qtest>
+    <qtest>
+      <testcase>3</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([0,0,0],[1,0,0],[0,0,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([2,0,20],[0,1,0],[0,0,1])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([1,0,1],[0,1,0],[0,0,1])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt1-rref-F</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt2-rref-F</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt3-rref-F</expectedanswernote>
+      </expected>
+    </qtest>
+    <qtest>
+      <testcase>4</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([0,0,1],[0,0,0],[0,0,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([0,0,0],[0,0,0],[0,0,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([0,0,1],[0,0,0],[0,0,0])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt1-rref-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt2-rref-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt3-repeat1-F</expectedanswernote>
+      </expected>
+    </qtest>
+    <qtest>
+      <testcase>5</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([0,1,1],[0,0,0],[0,0,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([1,1,1],[0,0,0],[0,0,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([1,1,1],[0,0,0],[0,0,0])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt1-rref-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt2-rref-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>0.0000000</expectedscore>
+        <expectedpenalty></expectedpenalty>
+        <expectedanswernote>prt3-repeat2-F</expectedanswernote>
+      </expected>
+    </qtest>
+    <qtest>
+      <testcase>6</testcase>
+      <testinput>
+        <name>ans1</name>
+        <value>matrix([1,0,5],[0,1,3],[0,0,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans2</name>
+        <value>matrix([1,5,0],[0,0,1],[0,0,0])</value>
+      </testinput>
+      <testinput>
+        <name>ans3</name>
+        <value>matrix([0,1,0],[0,0,1],[0,0,0])</value>
+      </testinput>
+      <expected>
+        <name>prt1</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt1-rref-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt2</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt2-rref-T</expectedanswernote>
+      </expected>
+      <expected>
+        <name>prt3</name>
+        <expectedscore>1.0000000</expectedscore>
+        <expectedpenalty>0.0000000</expectedpenalty>
+        <expectedanswernote>prt3-rref-T</expectedanswernote>
+      </expected>
+    </qtest>
+  </question>
+
+</quiz>
