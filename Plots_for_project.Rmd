@@ -468,7 +468,31 @@ ca3
 ```
 
 
-```{r show_data}
-all_types_all_questions
+```{r example_types_revisited}
 
+questions <- c(rep(1, 10), rep(2,10), rep(3,10))
+
+formats <- c(format1, format2, format3)
+
+percentages_et <- c(ratio1*100, ratio2*100, ratio3*100)
+
+example_types <- data.frame("Participant"=participant, "Percentage_of_Example_Types"= percentages_et,"Question"= questions, "Format"=formats)
+
+#average for each format
+df_means <- example_types %>% group_by(Format) %>% summarise(value=mean(Percentage_of_Example_Types))
+avg_i<- as.numeric(df_means[1,2])
+avg_p <- as.numeric(df_means[2,2])
+avg_s <- as.numeric(df_means[3,2])
+
+```
+
+```{r example_types_plots_revistied}
+
+example_types_plot <- ggplot(data=example_types, aes(x=Participant, y= Percentage_of_Example_Types))+geom_point()+ facet_wrap(~Format)+
+  geom_hline(data = data.frame(avg_i,Format='interactive'), aes(yintercept = avg_i))+
+  geom_hline(data = data.frame(avg_p,Format='paper'), aes(yintercept = avg_p))+
+  geom_hline(data = data.frame(avg_s,Format='static'), aes(yintercept = avg_s))+
+  labs(title="Example Types Given in Each Format, for All Questions",subtitle="With a line of average percentage of example types given for each format ",y= "Percentage of Example Types Given (%)")
+
+example_types_plot
 ```
