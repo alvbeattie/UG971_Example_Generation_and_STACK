@@ -466,3 +466,9 @@ ca1
 ca2
 ca3
 ```
+
+
+```{r show_data}
+all_types_all_questions
+
+```
