@@ -42,7 +42,7 @@ This repository is the appendix to the project's report. This file contains link
 
 <img src="https://github.com/eilidhmillin/UG971_Example_Generation_and_STACK/blob/811004e31d254f1dd02c8775d6396d6fc1330147/Plots/strategy.png" width= 70% height=80%>
 
-#### Number of Correct Answers
+
 
 
 
