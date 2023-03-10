@@ -508,17 +508,32 @@ analysis <- c(0,0,0,1,1,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0, rep(1,7), 0,0,1)
 strategies <- data.frame("Participant"=participant,"Question"= questions, "Format"=formats, trial_and_error, transformation, analysis)
 
 
-
-
 t_and_e <- strategies[strategies$trial_and_error==1,]
 tr <- t_and_e <- strategies[strategies$transformation==1,]
 ana <- t_and_e <- strategies[strategies$analysis==1,]
 
+paper_strat <- strategies[strategies$Format=="paper",]
+int_strat <- strategies[strategies$Format=="interactive",]
+static_strat <- strategies[strategies$Format=="static",]
+
+paper_te<- sum(paper_strat$trial_and_error)
+paper_tr<- sum(paper_strat$transformation)
+paper_an<- sum(paper_strat$analysis)
 
 
+int_te<- sum(int_strat$trial_and_error)
+int_tr<- sum(int_strat$transformation)
+int_an<- sum(int_strat$analysis)
 
 
+static_te<- sum(static_strat$trial_and_error)
+static_tr<- sum(static_strat$transformation)
+static_an<- sum(static_strat$analysis)
 
+strategies_totals <- data.frame("Format"= c(rep("paper", 3), rep("interactive", 3), rep("static", 3)), "Strategy"=  c(rep(c("trial_and_error", "transformation", "analysis"), 3)), "total"= c(paper_te, paper_tr, paper_an, int_te, int_tr, int_an, static_te, static_tr, static_an))
 
+strategies_plot2 <- ggplot(strategies_totals, mapping=aes(x=Strategy, y=total))+geom_bar(stat="identity")+facet_wrap(~Format)
+
+strategies_plot2
 
 ```
