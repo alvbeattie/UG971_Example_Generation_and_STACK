@@ -40,6 +40,8 @@ This repository is the appendix to the project's report. This file contains link
 
 #### Strategies
 
+<img src="https://github.com/eilidhmillin/UG971_Example_Generation_and_STACK/blob/47a5c25ef68585bbb74c8cd400d38b4f061a6ea7/Plots/strategy.png" width=350>
+
 #### Number of Correct Answers
 
 
