@@ -530,12 +530,12 @@ static_te<- sum(static_strat$trial_and_error)
 static_tr<- sum(static_strat$transformation)
 static_an<- sum(static_strat$analysis)
 
-strategies_totals <- data.frame("Format"= c(rep("paper", 3), rep("interactive", 3), rep("static", 3)), "Strategy"=  c(rep(c("trial_and_error", "transformation", "analysis"), 3)), "total"= c(paper_te, paper_tr, paper_an, int_te, int_tr, int_an, static_te, static_tr, static_an))
+strategies_totals <- data.frame("Format"= c(rep("paper", 3), rep("interactive", 3), rep("static", 3)), "Strategy"=  c(rep(c("Trial and Error", "Transformation", "Analysis"), 3)), "total"= c(paper_te, paper_tr, paper_an, int_te, int_tr, int_an, static_te, static_tr, static_an))
 
-strategies_plot2 <- ggplot(strategies_totals, mapping=aes(x=Strategy, y=total))+geom_bar(stat="identity")+facet_wrap(~Format)+labs(y="Number of Participants", title="Total number of articipants using each strategy in each format, for all questions.", subtitle="Note that this is based off the groups opinion and interpretation of the strategies used by participants.")+ theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+strategies_plot2 <- ggplot(strategies_totals, mapping=aes(x=Strategy, y=total))+geom_bar(stat="identity")+facet_wrap(~Format)+labs(y="Number of Participants", title="Total number of participants using each strategy in each format, for all questions.", subtitle="Note that this is based on the groups opinion and interpretation of the strategies used by participants.")+ theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))#+scale_x_discrete(labels=c("Trial and Error", "Transformation", "Analysis"))
 
 strategies_plot2
 
-ggsave("Plots/strategy.png", strategies_plot2)
+ggsave("Plots/strategy.png", strategies_plot2, width=10)
 
 ```
