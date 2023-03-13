@@ -423,7 +423,7 @@ paper3<- ggplot(y3_paper, mapping=aes(x=strats, y= totals3_paper))+geom_col()+ s
 
 ```{r saving_plots}
 
-ggsave("ca1.png", ca1, width=5, height=5)
+ggsave("Plots/ca1.png", ca1, scale=0.5)
 ca1
 ca2
 ca3
