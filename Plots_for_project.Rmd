@@ -421,50 +421,20 @@ static3<- ggplot(y3_static, mapping=aes(x=strats, y= totals3_static))+geom_col()
 paper3<- ggplot(y3_paper, mapping=aes(x=strats, y= totals3_paper))+geom_col()+ scale_x_discrete(labels= labels)+labs(x= "Strategies", y="Number of Participants", fill="Format", title="Number of Participants Using Each Strategy for Question 3", subtitle = "Paper format")+theme(text=element_text(size=15))
 ```
 
-```{r all plots}
+```{r saving_plots}
 
-#Number using each strategy, per question
-strategies1
-strategies2
-strategies3
-
-#Number using each strategy, per question, per format
-int1
-static1
-paper1
-
-int2
-static2
-paper2
-
-int3
-static3
-paper3
-
-
-# Example types per participant
-p2
-p3
-p4
-p5
-p6
-p7
-p8
-p9
-p10
-
-# example types per question
-q1_et
-q2_et
-q3_et
-
-# example types per format
-f
-
-# correct ans plots
+ggsave("ca1.png", ca1, width=5, height=5)
 ca1
 ca2
 ca3
+example_types_plot
+strategy
+p1
+p2
+p3
+...
+
+
 ```
 
 
@@ -537,5 +507,31 @@ strategies_plot2 <- ggplot(strategies_totals, mapping=aes(x=Strategy, y=total))+
 strategies_plot2
 
 ggsave("Plots/strategy.png", strategies_plot2, width=10)
+```
+
+```{r correct_ans_revisited}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```
